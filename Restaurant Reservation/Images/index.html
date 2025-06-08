@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Famous Foods & Reservations - Andhra Pradesh</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body >
+  <header>
+    <h1>Andhra Pradesh Famous Foods & Restaurant Reservation</h1>
+    <p>Explore signature dishes from every district and book your table instantly!</p>
+  </header>
+
+  <nav>
+    <!-- District links will be dynamically generated -->
+  </nav>
+
+  <main id="districts">
+    <!-- District content will be dynamically generated -->
+    <section class="reservation-form">
+      <h2>Reserve Your Table</h2>
+      <form onsubmit="return reserveTable()">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+
+        <label for="district">Select District</label>
+        <select id="district" required>
+          <option value="">-- Select District --</option>
+        </select>
+
+        <label for="date">Reservation Date</label>
+        <input type="date" id="date" required />
+
+        <label for="message">Special Requests</label>
+        <textarea id="message" rows="4"></textarea>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Andhra Pradesh Culinary Tourism. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" text-align="center"></script>
+</body>
+
+</html>

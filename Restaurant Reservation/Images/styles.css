@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;600&display=swap');
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Body with spiced gradient and subtle pattern */
+body {
+  background: linear-gradient(135deg, #d63031, #f1c40f, #e67e22);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  color: #2d2d2d;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/asanoha-400px.png');
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header styling */
+header {
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  color: #c0392b;
+  margin-bottom: 10px;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+  font-size: 1.3em;
+  color: #444;
+}
+
+/* Navigation styling */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(44, 62, 80, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  background: rgba(231, 76, 60, 0.2);
+}
+
+nav a:hover {
+  background: #e74c3c;
+  color: white;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.7);
+  transform: scale(1.05);
+}
+
+/* Main content styling */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* District section styling with parallax and transition */
+.district {
+  max-width: 800px;
+  width: 100%;
+  margin: 30px 0;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transform: translateZ(0);
+  opacity: 1;
+  max-height: 1000px; /* Arbitrary large value for transition */
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.4s, box-shadow 0.4s;
+}
+
+.district.hidden {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  transform: translateY(20px);
+}
+
+.district:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.district h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2em;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+.district p {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.district img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid #f1c40f;
+  transition: transform 0.3s;
+}
+
+.district img:hover {
+  transform: scale(1.05);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reservation form styling */
+.reservation-form {
+  max-width: 800px;
+  width: 100%;
+  margin: 30px 0;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+.reservation-form h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2em;
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+.reservation-form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+  color: #2d2d2d;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.reservation-form label::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e74c3c;
+  transition: width 0.3s;
+}
+
+.reservation-form input:focus + label::after,
+.reservation-form select:focus + label::after,
+.reservation-form textarea:focus + label::after {
+  width: 100%;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1.1em;
+  background: #f9f9f9;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 8px rgba(231, 76, 60, 0.5);
+  outline: none;
+}
+
+.reservation-form textarea {
+  resize: vertical;
+}
+
+.reservation-form button {
+  padding: 14px 40px;
+  background: linear-gradient(90deg, #e74c3c, #f1c40f);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reservation-form button:hover {
+  background: linear-gradient(90deg, #c0392b, #e67e22);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.5);
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(44, 62, 80, 0.95);
+  color: #ecf0f1;
+  border-top: 3px solid #e74c3c;
+  margin-top: 40px;
+}
+
+footer p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+footer .social-icons a {
+  color: #ecf0f1;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+  color: #e74c3c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+
+  .district,
+  .reservation-form {
+    max-width: 90%;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  nav a {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  .district h2,
+  .reservation-form h2 {
+    font-size: 1.8em;
+  }
+
+  .reservation-form button {
+    padding: 12px 30px;
+  }
+}
