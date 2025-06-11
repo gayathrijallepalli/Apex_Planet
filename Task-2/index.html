@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List & Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">Navigation</nav>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contact Form</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+                <small class="error" id="nameError"></small>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <small class="error" id="emailError"></small>
+
+                <label for="suggestions">Additional Suggestions:</label>
+                <textarea id="suggestions" name="suggestions" placeholder="Enter any suggestions"></textarea>
+                <small class="error" id="suggestionsError"></small>
+                
+                <button type="submit">Submit</button>
+                
+            </form>
+        </aside>
+
+        <main class="content">
+            <h2>Task Manager</h2>
+            <input type="text" id="taskInput" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="taskList"></ul>
+
+            <h2>Image Gallery</h2>
+            <input type="file" id="imageUpload" accept="image/*">
+            <div id="gallery"></div>
+            <button onclick="startSlideshow()">Start Slideshow</button>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: #fff;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar, .content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    height: 400px;
+}
+
+.sidebar:hover, .content:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #222;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Form and inputs */
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    border-color: #aaa;
+    background: #f9f9f9;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+input::placeholder, textarea::placeholder {
+    font-family: 'Poppins', sans-serif; /* Match with other placeholders */
+    font-size: 14px;
+    color: #888;
+    font-style: italic; /* Optional */
+}
+
+.sidebar {
+    margin-bottom: 20px;
+}
+
+/* To-Do List */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    padding: 12px;
+    background: #ffffff;
+    color: #333;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+li:hover {
+    background: #e2e6ea;
+}
+
+/* Image Gallery */
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container button {
+    position: static;
+    top: 5px;
+    right: 5px;
+    background: #f27979; /* A softer red */
+    color: rgb(201, 124, 124);
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button hover effect */
+.image-container button:hover {
+    background: #c41212; /* Darker red for hover */
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+button {
+    background: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #218838;
+}
