@@ -1,0 +1,123 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #d9a5da;
+}
+
+header {
+    width: 55%;
+    max-width: 500px;
+    margin: auto;
+  letter-spacing: 1px;
+  background-color: #eb54eb;
+  color: rgb(244, 233, 242);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Center all sections */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: center;
+  width: 50%;
+  max-width: 450px; /* Keeps content properly spaced */
+  margin: 1rem auto; /* Centers sections */
+  padding: 1rem;
+  background: rgb(226, 86, 221);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+}
+
+.quiz-section button,
+.api-section button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #1811ed;
+  border: 0cap;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.selected {
+  background-color: #c24acb; /* Green highlight */
+  color: white;
+  font-weight: bold;
+  border: 2px solid #df5ddf;
+  transition: background-color 0.3s ease;
+}
+#answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the buttons horizontally */
+}
+
+#answers button {
+  width: 50%; /* Smaller size */
+  max-width: 220px; /* Limits excessive width */
+  text-align: center;
+  padding: 0.6rem;
+  margin: 8px 0;
+  background-color: #ba209e;
+  color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#answers button.selected {
+  background-color: #fb7ff9 !important; /* Highlight */
+  color: white;
+  font-weight: bold;
+}
+
+
+
+#joke-box {
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 2px solid #120f0f;
+  max-width: 400px;
+  background-color: #eb76e9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    width: 65%;
+    max-width: 380px;
+    padding: 0.8rem;
+  }
+    header {
+width: 70%;
+    }
+  }
+
+  #joke-box {
+    font-size: 16px;
+  }
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+    width: 85%;
+  }
+
+  section {
+    width: 80%;
+    max-width: 320px;
+    padding: 1rem;
+  }
+
+  #joke-box {
+    font-size: 14px;
+  }
+}

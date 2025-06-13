@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced CSS & JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Test Your Knowledge</h1>
+  </header>
+
+  <!-- Responsive Text Section -->
+  <section class="responsive-section">
+    <p>It would be interesting and fun when answer the questions </p>
+  </section>
+
+  <!-- Interactive Quiz Section -->
+  <section class="quiz-section">
+    <h2>Quiz</h2>
+    <div id="quiz-container">
+      <p id="question">Loading question...</p>
+      <div id="answers"></div>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+  </section>
+
+  <!-- API Fetch Section -->
+  <section class="api-section">
+    <h2>Joke</h2>
+    <div id="joke-box">Click below to get a joke!</div>
+    <button onclick="fetchJoke()">Get Joke</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
